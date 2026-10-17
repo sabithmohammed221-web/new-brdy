@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#21001f">
+
+    <title>For My Babe ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="hearts-container"></div>
+<div id="confetti-container"></div>
+
+<button id="musicButton" class="music-button" onclick="toggleMusic()">
+    ♫
+</button>
+
+<audio id="birthdayMusic" loop preload="auto">
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<main>
+
+    <!-- WELCOME SURPRISE -->
+
+    <section class="screen active" id="welcome">
+
+        <div class="glass-card">
+
+            <div class="sparkle">✨ 💖 ✨</div>
+
+            <p class="eyebrow">A LITTLE SURPRISE FOR YOU</p>
+
+            <h1>Happy Birthday</h1>
+
+            <h2>My Babe ❤️</h2>
+
+            <div class="birthday-cake">🎂</div>
+
+            <p class="description">
+                Today is not just another day.
+                Today is the birthday of someone who
+                makes my world a little more beautiful. 🥹
+            </p>
+
+            <p class="soft-text">
+                I made something special just for you...
+            </p>
+
+            <button class="pink-button" onclick="startSurprise()">
+                Open Your Surprise 💌
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- LOVE LETTER -->
+
+    <section class="screen" id="letter">
+
+        <div class="glass-card">
+
+            <div class="envelope" id="envelope">
+                💌
+            </div>
+
+            <h1>A Letter From My Heart</h1>
+
+            <p class="soft-text">
+                There is something I want you to know...
+            </p>
+
+            <button class="pink-button" id="letterButton"
+                    onclick="revealLetter()">
+                Open My Letter 💗
+            </button>
+
+            <div class="letter-content hidden" id="letterContent">
+
+                <p>My sweetest Babe, ❤️</p>
+
+                <p>
+                    You are one of the most beautiful parts of my life.
+                    Your smile can make an ordinary day feel special,
+                    and the memories we share mean more to me than
+                    words can explain.
+                </p>
+
+                <p>
+                    I may not always know the perfect words to say,
+                    but I hope you always feel how much you matter.
+                </p>
+
+                <p>
+                    On your birthday, I wish you happiness,
+                    peace, success, and countless reasons to smile.
+                </p>
+
+                <p>
+                    If I could give you one gift that lasts forever,
+                    it would be the feeling of being loved,
+                    appreciated, and cherished. 🫂
+                </p>
+
+                <h3>Happy Birthday, Baby! 💋</h3>
+
+            </div>
+
+            <button class="pink-button hidden"
+                    id="letterContinue"
+                    onclick="goToMemories()">
+                See Our Memories 📸
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- PHOTO MEMORIES -->
+
+    <section class="screen" id="memories">
+
+        <div class="glass-card">
+
+            <div class="section-emoji">📸</div>
+
+            <h1>Little Moments</h1>
+
+            <p class="description">
+                Some memories become treasures
+                that stay in our hearts forever. ❤️
+            </p>
+
+            <div class="photo-frame">
+
+                <img
+                        id="memoryPhoto"
+                        src="images/photo1.jpeg"
+                        alt="A special memory"
+                >
+
+                <p id="photoCaption">
+                    A beautiful memory 💗
+                </p>
+
+            </div>
+
+            <div class="photo-controls">
+
+                <button class="round-button"
+                        onclick="previousPhoto()">
+                    ❮
+                </button>
+
+                <button class="round-button"
+                        onclick="nextPhoto()">
+                    ❯
+                </button>
+
+            </div>
+
+            <p class="soft-text">
+                Three pictures, a thousand feelings. 🥹
+            </p>
+
+            <button class="pink-button" onclick="openNextSurprise()">
+                One More Surprise 🎁
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- HIDDEN SURPRISE -->
+
+    <section class="screen" id="surprise">
+
+        <div class="glass-card">
+
+            <div class="gift-box" id="giftBox">🎁</div>
+
+            <h1>A Little Gift</h1>
+
+            <p class="description">
+                I couldn't wrap the whole world for you,
+                so I wrapped a little piece of my heart instead.
+            </p>
+
+            <button class="pink-button"
+                    id="giftButton"
+                    onclick="openGift()">
+                Unwrap Your Gift 🎀
+            </button>
+
+            <div class="gift-reveal hidden" id="giftReveal">
+
+                <div class="big-heart">❤️</div>
+
+                <h2>You Are Special</h2>
+
+                <p>
+                    Out of all the beautiful things in this world,
+                    the moments that make me smile the most
+                    are the ones that remind me of you.
+                </p>
+
+                <p>
+                    I hope this little surprise makes you smile,
+                    because your happiness matters to me. 💖
+                </p>
+
+            </div>
+
+            <button class="pink-button hidden"
+                    id="loveQuestionButton"
+                    onclick="goToLoveQuestion()">
+                One Last Question 🥹
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- LOVE QUESTION -->
+
+    <section class="screen" id="loveQuestion">
+
+        <div class="glass-card love-card">
+
+            <div class="question-heart">💗</div>
+
+            <p class="eyebrow">JUST BETWEEN US</p>
+
+            <h1>One Little Question...</h1>
+
+            <p class="love-question">
+                Babe, will you keep making beautiful
+                memories with me and let me keep
+                making you smile? 🥹❤️
+            </p>
+
+            <div class="answer-area" id="answerArea">
+
+                <button class="yes-button" onclick="sayYes()">
+                    YES! ❤️
+                </button>
+
+                <button class="no-button"
+                        id="noButton"
+                        onpointerenter="runAway()"
+                        onclick="runAway()">
+                    NO 🙈
+                </button>
+
+            </div>
+
+            <p class="soft-text" id="questionHint">
+                Choose carefully, Babe! 🙈💕
+            </p>
+
+            <div class="yes-result hidden" id="yesResult">
+
+                <div class="celebration-heart">💖</div>
+
+                <h2>Yaaay! 🥹❤️</h2>
+
+                <p>
+                    You just made this birthday surprise
+                    even more special!
+                </p>
+
+                <p>
+                    Here's to more laughter, more memories,
+                    and more beautiful moments together. 🫂
+                </p>
+
+                <h3>Happy Birthday, My Babe! 🎂</h3>
+
+                <button class="pink-button" onclick="endBirthdayStory()">
+                    Forever in My Heart ❤️
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>

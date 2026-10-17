@@ -1,0 +1,491 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: white;
+    overflow-x: hidden;
+
+    background: linear-gradient(
+        -45deg,
+        #18001f,
+        #50002f,
+        #290044,
+        #70003e
+    );
+
+    background-size: 400% 400%;
+    animation: backgroundFlow 14s ease infinite;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+main {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 70px 14px 35px;
+    position: relative;
+    z-index: 2;
+}
+
+.screen {
+    display: none;
+    width: 100%;
+    max-width: 520px;
+}
+
+.screen.active {
+    display: block;
+    animation: appear 0.7s ease;
+}
+
+.glass-card {
+    width: 100%;
+    padding: 30px 22px;
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.075);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 0 35px rgba(255, 0, 130, 0.16),
+        inset 0 0 20px rgba(255, 255, 255, 0.025);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+h1 {
+    font-size: clamp(30px, 8vw, 44px);
+    line-height: 1.2;
+    color: #ffaddb;
+    margin: 20px 0 12px;
+    text-shadow: 0 0 20px rgba(255, 20, 147, 0.65);
+}
+
+h2 {
+    font-size: clamp(23px, 6vw, 30px);
+    color: #ffe1f1;
+    margin: 15px 0;
+}
+
+h3 {
+    color: #ffb4dc;
+    margin: 20px 0;
+}
+
+.eyebrow {
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    color: #ffc4e4;
+    margin: 20px 0;
+}
+
+.sparkle {
+    font-size: 32px;
+    animation: heartbeat 1.6s infinite;
+}
+
+.birthday-cake {
+    font-size: 78px;
+    margin: 25px 0;
+    animation: bounce 2s infinite;
+}
+
+.description {
+    font-size: 15px;
+    line-height: 1.9;
+    color: #ffe7f4;
+    margin: 20px 0;
+}
+
+.soft-text {
+    color: #ffc8e5;
+    font-size: 13px;
+    line-height: 1.8;
+    margin: 18px 0;
+}
+
+.pink-button {
+    display: inline-block;
+    border: none;
+    border-radius: 35px;
+    padding: 15px 23px;
+    margin-top: 18px;
+
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+
+    background: linear-gradient(
+        45deg,
+        #ff168a,
+        #ff70b9
+    );
+
+    box-shadow: 0 5px 22px rgba(255, 20, 147, 0.3);
+
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.pink-button:active {
+    transform: scale(0.95);
+}
+
+.envelope {
+    font-size: 80px;
+    margin: 10px 0;
+    animation: envelopeFloat 2s infinite;
+}
+
+.letter-content {
+    margin-top: 24px;
+    padding: 20px 16px;
+
+    text-align: left;
+    line-height: 1.9;
+    font-size: 14px;
+
+    color: #ffe8f5;
+
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+
+    animation: appear 0.7s ease;
+}
+
+.letter-content p {
+    margin-bottom: 17px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.section-emoji {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.photo-frame {
+    padding: 11px;
+    border-radius: 23px;
+
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    margin: 22px 0 15px;
+}
+
+.photo-frame img {
+    display: block;
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 16px;
+    opacity: 1;
+    transition: opacity 0.35s ease;
+}
+
+.photo-frame img.fade {
+    opacity: 0;
+}
+
+#photoCaption {
+    margin: 15px 0 5px;
+    color: #ffd0e8;
+    font-size: 13px;
+}
+
+.photo-controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 18px 0;
+}
+
+.round-button {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    font-size: 20px;
+}
+
+.gift-box {
+    font-size: 90px;
+    margin: 15px 0;
+    animation: giftBounce 1.5s infinite;
+}
+
+.gift-reveal {
+    padding: 20px 15px;
+    margin-top: 25px;
+
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.07);
+
+    line-height: 1.9;
+    font-size: 14px;
+    color: #ffe8f5;
+
+    animation: appear 0.8s ease;
+}
+
+.gift-reveal p {
+    margin: 15px 0;
+}
+
+.big-heart {
+    font-size: 70px;
+    animation: heartbeat 1s infinite;
+}
+
+.music-button {
+    position: fixed;
+    top: 18px;
+    right: 18px;
+    z-index: 10;
+
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.12);
+    color: white;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    font-size: 23px;
+}
+
+#hearts-container,
+#confetti-container {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+#hearts-container {
+    z-index: 1;
+}
+
+#confetti-container {
+    z-index: 5;
+}
+
+.floating-heart {
+    position: absolute;
+    bottom: -50px;
+    animation: floatUp linear forwards;
+    opacity: 0.8;
+}
+
+.love-card {
+    overflow: visible;
+}
+
+.question-heart {
+    font-size: 70px;
+    animation: heartbeat 1.2s infinite;
+}
+
+.love-question {
+    font-size: 20px;
+    line-height: 1.8;
+    color: #fff0f8;
+    margin: 25px 0;
+}
+
+.answer-area {
+    position: relative;
+    width: 100%;
+    min-height: 125px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+
+    margin: 20px auto;
+}
+
+.yes-button,
+.no-button {
+    border: none;
+    border-radius: 30px;
+    padding: 14px 28px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.yes-button {
+    color: white;
+    background: linear-gradient(45deg, #ff168a, #ff70b9);
+    box-shadow: 0 0 20px rgba(255, 20, 147, 0.35);
+}
+
+.no-button {
+    color: white;
+    background: #5b3155;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    touch-action: manipulation;
+}
+
+.yes-result {
+    margin-top: 25px;
+    padding: 20px 15px;
+
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.08);
+
+    animation: appear 0.8s ease;
+}
+
+.yes-result p {
+    color: #ffe6f3;
+    line-height: 1.9;
+    margin: 16px 0;
+}
+
+.celebration-heart {
+    font-size: 75px;
+    animation: heartbeat 0.8s infinite;
+}
+
+@keyframes backgroundFlow {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.16);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-9px);
+    }
+}
+
+@keyframes envelopeFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(-4deg);
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(4deg);
+    }
+}
+
+@keyframes giftBounce {
+    0%, 100% {
+        transform: translateY(0) rotate(-3deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(3deg);
+    }
+}
+
+@keyframes floatUp {
+    to {
+        transform: translateY(-115vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.confetti-piece {
+    position: absolute;
+    top: -20px;
+    animation: confettiFall linear forwards;
+}
+
+@keyframes confettiFall {
+    to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 380px) {
+    main {
+        padding: 65px 10px 25px;
+    }
+
+    .glass-card {
+        padding: 25px 15px;
+    }
+
+    .description {
+        font-size: 14px;
+    }
+
+    .photo-frame img {
+        height: 260px;
+    }
+
+    .love-question {
+        font-size: 18px;
+    }
+
+    .yes-button,
+    .no-button {
+        padding: 13px 23px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
